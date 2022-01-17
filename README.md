@@ -1,5 +1,10 @@
 # Trace Log for Laravel/Lumen
 
+<a href="https://packagist.org/packages/forecho/laravel-trace-log"><img src="https://poser.pugx.org/forecho/laravel-trace-log/v/stable.svg" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/forecho/laravel-trace-log"><img src="https://poser.pugx.org/forecho/laravel-trace-log/v/unstable.svg" alt="Latest Unstable Version"></a>
+<a href="https://packagist.org/packages/forecho/laravel-trace-log"><img src="https://poser.pugx.org/forecho/laravel-trace-log/downloads" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/forecho/laravel-trace-log"><img src="https://poser.pugx.org/forecho/laravel-trace-log/license" alt="License"></a>
+
 ## Install
 
 ```shell
