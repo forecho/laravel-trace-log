@@ -10,11 +10,11 @@ return [
     'filter_ignored_header_keys' => 'authorization',
 
     // no logging
-    'filter_ignored_keys' => '',
+    'filter_ignored_keys' => '', // eg: 'password,password_confirmation'
 
     // replace all data with *
     'filter_hide_keys' => '',
 
     // hide part of the data, show only the first 20% and last 20% of the data, replace the rest with *
-    'filter_half_hide_keys' => '',
+    'filter_half_hide_keys' => '',  // eg: 'client_id,client_secret'
 ];

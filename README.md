@@ -17,7 +17,7 @@ $app->register(Forecho\LaravelTraceLog\TraceLogServiceProvider::class);
 This step is optional
 
 ```shell
-php artisan vendor:publish --provider="Forecho\LaravelTraceLog\TraceLogServiceProvider" --tag=config
+php artisan vendor:publish --provider="Forecho\LaravelTraceLog\TraceLogServiceProvider"
 ```
 
 if you use Lumen, you need add config file to your `config` directory.

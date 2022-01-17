@@ -48,7 +48,7 @@ class TraceLog
     protected static function getTraceId(): string
     {
         if (!$traceId = config('tracelog.id')) {
-            $traceId = Str::uuid();
+            $traceId = str_replace('-', '', Str::uuid());
             config(['tracelog.id' => $traceId]);
         }
 
