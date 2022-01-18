@@ -45,7 +45,7 @@ class TraceLog
         \Illuminate\Support\Facades\Log::$name($message, $logData);
     }
 
-    protected static function getTraceId(): string
+    public static function getTraceId(): string
     {
         if (!$traceId = config('tracelog.id')) {
             $traceId = str_replace('-', '', Str::uuid());
