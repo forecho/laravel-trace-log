@@ -66,7 +66,32 @@ protected $routeMiddleware = [
 ### Logging
 
 ```php
-\Forecho\LaravelTraceLog\TraceLog::warning('This is a warning message.', ['foo' => 'bar']);
+
+use Forecho\LaravelTraceLog\TraceLog;
+
+TraceLog::warning('This is a warning message.', ['foo' => 'bar']);
+TraceLog::error('This is an error message.', ['foo' => 'bar']);
+TraceLog::info('This is an info message.', ['foo' => 'bar']);
+TraceLog::debug('This is a debug message.', ['foo' => 'bar']);
 ```
 
+### Get Trace ID
 
+```php
+use Forecho\LaravelTraceLog\TraceLog;
+
+TraceLog::getTraceId();
+```
+
+### Curl Request
+
+if you want next system use the same trace_id, you need add `trace_id` to your `header`
+
+```php
+use Forecho\LaravelTraceLog\TraceLog;
+
+$key = config('tracelog.trace_id_header_key');
+$headers = [
+  "$key: " . TraceLog::getTraceId(),
+]
+```
