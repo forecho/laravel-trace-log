@@ -31,6 +31,12 @@ if you use Lumen, you need add config file to your `config` directory.
 cp vendor/forecho/laravel-trace-log/config/tracelog.php config/
 ```
 
+and you need add code to your `bootstrap/app.php` file.
+
+```php
+$app->configure('tracelog');
+```
+
 **Note**
 
 - The number of bits of the value corresponding to the key in `log_filter_half_hide_keys` must be greater than 2,
