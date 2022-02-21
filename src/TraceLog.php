@@ -68,9 +68,6 @@ class TraceLog
                 if (is_callable($value)) {
                     $value = call_user_func($value);
                 }
-                if (!is_string($value) && !empty($value)) {
-                    $value = json_encode($value);
-                }
                 if (empty($value)) {
                     continue;
                 }
