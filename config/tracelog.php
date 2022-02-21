@@ -23,6 +23,6 @@ return [
         // 'user_id' => function () {
         //    return auth()->id();
         // },
-        // 'tag' => 'test',
+        // 'tag' => 'test', // value can use closure、string、array
     ],
 ];
