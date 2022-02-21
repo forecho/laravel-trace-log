@@ -17,4 +17,12 @@ return [
 
     // hide part of the data, show only the first 20% and last 20% of the data, replace the rest with *
     'filter_half_hide_keys' => '',  // eg: 'client_id,client_secret'
+
+    // additional data to be logged
+    'additional_fields' => [
+        // 'user_id' => function () {
+        //    return auth()->id();
+        // },
+        // 'tag' => 'test',
+    ],
 ];

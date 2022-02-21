@@ -60,7 +60,7 @@ class TraceLogMiddleware
         $statusCode = $response->getStatusCode();
         $responseInfo = [
             'status_code' => $statusCode,
-            'body' => $response->content(),
+            'body' => json_decode($response->content(), true),
         ];
         $endMillisecond = round(microtime(true) * 1000);
         $context = [

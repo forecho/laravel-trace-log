@@ -41,6 +41,9 @@ class TraceLog
         if (!empty($responseData)) {
             $logData['response'] = $responseData;
         }
+        if (($additionalFields = config('tracelog.additional_fields')) && is_array($additionalFields)) {
+            static::fillMessageWithAdditionalFields($logData, $additionalFields);
+        }
 
         \Illuminate\Support\Facades\Log::$name($message, $logData);
     }
@@ -53,5 +56,26 @@ class TraceLog
         }
 
         return $traceId;
+    }
+
+    /**
+     * Add any additional fields the user specifies
+     */
+    private static function fillMessageWithAdditionalFields(array &$logData, array $additionalFields): void
+    {
+        foreach ($additionalFields as $key => $value) {
+            if (is_string($key) && !empty($key)) {
+                if (is_callable($value)) {
+                    $value = call_user_func($value);
+                }
+                if (!is_string($value) && !empty($value)) {
+                    $value = json_encode($value);
+                }
+                if (empty($value)) {
+                    continue;
+                }
+                $logData[$key] = $value;
+            }
+        }
     }
 }
