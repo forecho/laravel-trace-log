@@ -20,9 +20,7 @@ return [
 
     // additional data to be logged
     'additional_fields' => [
-        // 'user_id' => function () {
-        //    return auth()->id();
-        // },
+        // 'user_id' => [App\Models\User::class, 'getId'],
         // 'tag' => 'test', // value can use closure、string、array
     ],
 ];

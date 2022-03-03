@@ -44,6 +44,30 @@ $app->configure('tracelog');
 - If the configuration file causes an error, the filtering function will be invalid, the error message can be searched
   for `request_params_filter_key_config_error` to view the log.
 
+`additional_fields` is an array of additional fields that will be added to the log. eg:
+
+```php
+'additional_fields' => [
+    'user_id' => [App\Models\User::class, 'getId'],
+    'tag' => 'test', // value can use closure、string、array
+  ],
+```
+
+add `getId()` method to User model, and the value of the field will be the return value of the method.
+
+```php
+namespace App\Models;
+
+class User 
+{
+    public static function getId(): ?int
+    {
+        return data_get(Auth::user(), 'id');
+    }
+}
+
+```
+
 ## Usage
 
 ### Middleware(Optional)
