@@ -68,7 +68,7 @@ class TraceLogMiddleware
             'spendingMillisecond' => $endMillisecond - $beginMillisecond,
         ];
 
-        if ($statusCode >= 400) {
+        if ($statusCode >= config('tracelog.error_status_code_start', 500)) {
             TraceLog::error('request_responded_error', $context, $requestInfo, $responseInfo);
         } else {
             TraceLog::info('request_responded_success', $context, $requestInfo, $responseInfo);

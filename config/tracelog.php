@@ -4,6 +4,8 @@ return [
     // no need to set
     'id' => '',
 
+    'error_status_code_start' => 500,
+
     'trace_id_header_key' => 'X-Trace-Id',
 
     // do not record the value of the header specified key to the log
