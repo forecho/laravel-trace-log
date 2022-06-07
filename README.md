@@ -122,6 +122,6 @@ use Forecho\LaravelTraceLog\TraceLog;
 
 $key = config('tracelog.trace_id_header_key');
 $headers = [
-  "$key: " . TraceLog::getTraceId(),
+  $key => TraceLog::getTraceId(),
 ]
 ```
