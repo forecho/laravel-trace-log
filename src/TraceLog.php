@@ -28,7 +28,8 @@ class TraceLog
     {
         $argOffset = 0;
         $message = config('app.name');
-        $logData['trace_id'] = static::getTraceId();
+        $key = config('tracelog.trace_id_header_key');
+        $logData[$key] = static::getTraceId();
         $logData['message'] = data_get($arguments, (string)(0 + $argOffset), '');
         $logData['context'] = data_get($arguments, (string)(1 + $argOffset), []);
 
