@@ -82,7 +82,7 @@ class TraceLogMiddleware
         $key = config('tracelog.trace_id_header_key');
         if ($request->hasHeader($key)) {
             $traceId = $request->header($key);
-            config(['tracelog.trace_id' => $traceId]);
+            config(['tracelog.id' => $traceId]);
         }
     }
 
